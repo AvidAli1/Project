@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: #000080; -fx-background-color: #E6E6FA; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.AuctioneerLoginController">
+   <children>
+      <Label layoutX="184.0" layoutY="38.0" text="Auctioneer" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label id="usernameLabel" layoutX="119.0" layoutY="150.0" text="Username:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label id="passwordLabel" layoutX="121.0" layoutY="200.0" text="Password:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="201.0" layoutY="150.0" prefHeight="25.0" prefWidth="201.0" promptText="Enter your username." />
+      <Button fx:id="loginButton" layoutX="260.0" layoutY="276.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 20px;" text="Login">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <PasswordField id="passwordTextField" fx:id="passwordTextField" layoutX="201.0" layoutY="200.0" prefHeight="25.0" prefWidth="201.0" promptText="Enter your password.">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </PasswordField>
+      <Separator layoutX="177.0" layoutY="103.0" prefHeight="3.0" prefWidth="249.0" style="-fx-background-color: #000080;" />
+   </children>
+</Pane>

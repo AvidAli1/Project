@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.WhoAreYouController">
+   <right>
+      <AnchorPane prefHeight="400.0" prefWidth="334.0" style="-fx-background-color: #E6E6FA; -fx-border-color: #FF7F50; -fx-border-width: 3px 3px 3px 3px;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="35.0" layoutY="62.0" text="Identify your role.">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="auctioneerRadioButton" layoutX="74.0" layoutY="128.0" mnemonicParsing="false" text="Auctioneer">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="userTypeGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="buyerRadioButton" layoutX="74.0" layoutY="183.0" mnemonicParsing="false" text="Buyer" toggleGroup="$userTypeGroup">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="sellerRadioButton" layoutX="75.0" layoutY="244.0" mnemonicParsing="false" text="Seller" toggleGroup="$userTypeGroup">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </RadioButton>
+            <Button layoutX="79.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleContinueButton" prefHeight="32.0" prefWidth="123.0" style="-fx-background-radius: 20px; -fx-background-color: #FF7F50;" text="Continue">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="291.0" style="-fx-background-color: #FFFFE0; -fx-border-color: #FF7F50; -fx-border-width: 3px 0px 3px 3px;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="64.0" layoutY="314.0" prefHeight="22.0" prefWidth="239.0" text="for seamless auction management.&quot;" textFill="RED">
+               <font>
+                  <Font name="Bell MT Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="276.0" text="&quot;Auctioneer is your one-stop shop" textFill="RED">
+               <font>
+                  <Font name="Bell MT Italic" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="76.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../bin/images/logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="64.0" layoutY="200.0" text="Auctioneer">
+               <font>
+                  <Font name="System Bold Italic" size="34.0" />
+               </font>
+            </Label>
+            <Separator layoutX="50.0" layoutY="240.0" prefWidth="200.0" style="-fx-background-color: #000080;" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="410.0" prefWidth="8.0" BorderPane.alignment="CENTER">
+         <children>
+            <Separator layoutX="9.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="6.0" style="-fx-background-color: #FFA500;" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
