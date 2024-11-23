@@ -44,13 +44,17 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="addItemButton" layoutX="251.0" layoutY="230.0" mnemonicParsing="false" prefHeight="2.0" prefWidth="94.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="Add Item">
+                  <Button fx:id="addItemButton" layoutX="251.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleAddItem" prefHeight="2.0" prefWidth="94.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2; -fx-text-fill: black;" text="Add Item">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <TextField fx:id="itemIDField" alignment="CENTER" layoutX="203.0" layoutY="56.0" prefHeight="27.0" prefWidth="189.0" promptText="Item ID" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-text-fill: #EEEEEE; -fx-border-width: 0px 0px 2px 0px;" />
-                  <TextField fx:id="priceField" alignment="CENTER" layoutX="203.0" layoutY="120.0" prefHeight="27.0" prefWidth="189.0" promptText="Price" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-text-fill: #EEEEEE; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="itemIDField" alignment="CENTER" layoutX="47.0" layoutY="34.0" prefHeight="27.0" prefWidth="189.0" promptText="Item ID" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="nameField" alignment="CENTER" layoutX="47.0" layoutY="87.0" prefHeight="27.0" prefWidth="189.0" promptText="Name" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="quantityField" alignment="CENTER" layoutX="47.0" layoutY="145.0" prefHeight="27.0" prefWidth="189.0" promptText="Quantity" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="priceField" alignment="CENTER" layoutX="329.0" layoutY="34.0" prefHeight="27.0" prefWidth="189.0" promptText="Price" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="descriptionField" alignment="CENTER" layoutX="329.0" layoutY="87.0" prefHeight="27.0" prefWidth="189.0" promptText="Description" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField fx:id="sellerIDField" alignment="CENTER" layoutX="329.0" layoutY="145.0" prefHeight="27.0" prefWidth="189.0" promptText="sellerID" style="-fx-background-color: white; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
                </children>
             </Pane>
          </children>

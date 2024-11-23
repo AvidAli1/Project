@@ -39,7 +39,7 @@
                      <graphic>
                         <ImageView fitHeight="21.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/images/back.png" />
+                              <Image url="@../../bin/images/back.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -51,4 +51,3 @@
       </VBox>
    </left>
 </BorderPane>
-

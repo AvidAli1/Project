@@ -1,6 +1,7 @@
 package application.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,9 +11,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import Controller.itemManager;
+import Project.item;
 
 public class SellerListItemController {
 
+	itemManager item = new itemManager(); //item object that has display function
+	
     @FXML
     private Button backButton;
 
@@ -42,7 +47,15 @@ public class SellerListItemController {
 
     // Method to fetch items from the database
     private void fetchItemsFromDatabase() {
-        // TODO: Implement the logic to fetch items from the database and populate the itemList
+    	// Get all items from the database
+        ArrayList<item> items = item.getAllItems();
+
+        // Populate the ListView with item details
+        for (item i : items) {
+            String itemDetails = String.format("ID: %s | Name: %s | Quantity: %d | Price: %.2f | SellerID: %s",
+                    i.getItemID(), i.getItemName(), i.getItemQuantity(), i.getPrice(), i.getSellerID());
+            itemList.getItems().add(itemDetails); // Add formatted item details to the ListView
+        }
     }
 
     // Method to initialize the controller (called automatically by JavaFX)

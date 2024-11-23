@@ -2,18 +2,20 @@ package application.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+import Controller.itemManager;
 
 import java.io.IOException;
 
 public class SellerAddItemController {
+
+    private itemManager itemManager = new itemManager(); // Assuming itemManager has the required methods
 
     @FXML
     private TextField itemIDField;
@@ -22,75 +24,99 @@ public class SellerAddItemController {
     private TextField priceField;
 
     @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField quantityField;
+
+    @FXML
+    private TextField descriptionField;
+
+    @FXML
+    private TextField sellerIDField;
+
+    @FXML
     private Button addItemButton;
 
     @FXML
     private Button backButton;
 
-    // Handle the action for the "Add Item" button
     @FXML
     private void handleAddItem(ActionEvent event) {
-        String itemID = itemIDField.getText();
-        String price = priceField.getText();
+        // Collect input from fields
+        String itemID = itemIDField.getText().trim();
+        String priceText = priceField.getText().trim();
+        String name = nameField.getText().trim();
+        String quantityText = quantityField.getText().trim();
+        String description = descriptionField.getText().trim();
+        String sellerID = sellerIDField.getText().trim();
 
         // Validate input fields
-        if (itemID.isEmpty() || price.isEmpty()) {
-            showAlert("Validation Error", "Both fields must be filled!");
+        if (itemID.isEmpty() || priceText.isEmpty() || name.isEmpty() || quantityText.isEmpty() || sellerID.isEmpty()) {
+            showAlert("Validation Error", "All fields except 'Description' must be filled!");
             return;
         }
 
+        // Parse numerical inputs
+        double price;
+        int quantity;
         try {
-            // Add item logic, for example saving the item to a database
-            // Assuming a method addItemToDatabase that you will define later
-            addItemToDatabase(itemID, price);
-            
-            // Show success message
-            showAlert("Success", "Item added successfully!");
+            price = Double.parseDouble(priceText);
+            quantity = Integer.parseInt(quantityText);
 
-            // Optionally, clear fields after adding
-            itemIDField.clear();
-            priceField.clear();
+            if (price <= 0 || quantity <= 0) {
+                showAlert("Validation Error", "Price and Quantity must be positive numbers!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            showAlert("Validation Error", "Price must be a valid number and Quantity must be an integer!");
+            return;
+        }
 
+        // Add the item using itemManager
+        try {
+            boolean success = itemManager.addItem(itemID, name, quantity, price, description, sellerID);
+            if (success) {
+                showAlert("Success", "Item added successfully!");
+                clearFields();
+            } else {
+                showAlert("Error", "Item could not be added. It might already exist.");
+            }
         } catch (Exception e) {
-            // Handle any other exception
-            showAlert("Error", "There was an issue adding the item.");
+            showAlert("Error", "An unexpected error occurred while adding the item.");
             e.printStackTrace();
         }
     }
 
-    // Handle the action for the "Back" button
     @FXML
-    private void handleBack(ActionEvent event) throws IOException {
-    	try {
+    private void handleBack(ActionEvent event) {
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/sellerDashboard.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage (window)
             Stage stage = (Stage) backButton.getScene().getWindow();
-
-            // Set the scene 
             stage.setScene(new Scene(root));
-
-            // Show the stage
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();  // Handle the exception properly (e.g., show an alert)
-        } 
+            showAlert("Error", "Failed to load the dashboard.");
+            e.printStackTrace();
+        }
     }
 
-    // Utility method to show alerts
     private void showAlert(String title, String message) {
-        Alert alert = new Alert(AlertType.INFORMATION);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
     }
 
-    // Placeholder method to simulate adding the item to a database (to be implemented)
-    private void addItemToDatabase(String itemID, String price) {
-        // Implement the logic to add the item to the database or data structure
-        // Example: execute SQL to insert item details into a database
-        System.out.println("Item added with ID: " + itemID + " and price: " + price);
+    private void clearFields() {
+        itemIDField.clear();
+        priceField.clear();
+        nameField.clear();
+        quantityField.clear();
+        descriptionField.clear();
+        sellerIDField.clear();
     }
 }

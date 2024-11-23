@@ -31,7 +31,7 @@ public class SellerSignUpController {
     private PasswordField passwordField;
 
     @FXML
-    private TextField phoneField;
+    private TextField nameField;
 
     // Method to handle Sign Up button action
     @FXML
@@ -42,22 +42,22 @@ public class SellerSignUpController {
         String username = usernameField.getText();
         String email = emailField.getText();
         String password = passwordField.getText();
-        String phone = phoneField.getText();
+        String name = nameField.getText();
 
         // Validate inputs (example: ensure no empty fields)
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || phone.isEmpty()) {
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || name.isEmpty()) {
             System.out.println("Please fill in all fields.");
             return;
         }
 
-        seller.addSeller(username, password, email, phone);
+        seller.addSeller(username, password, email, name);
         
         // TODO: Add actual sign-up logic (e.g., saving user to a database)
         System.out.println("Sign-Up Successful for:");
         System.out.println("Username: " + username);
         System.out.println("Email: " + email);
         System.out.println("Password: " + password);
-        System.out.println("Phone: " + phone);
+        System.out.println("Name: " + name);
     }
 
     // Method to handle Login button action

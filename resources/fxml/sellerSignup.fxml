@@ -25,10 +25,10 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="usernameField" alignment="CENTER" layoutX="214.0" layoutY="114.0" prefHeight="25.0" prefWidth="188.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-text-fill: #EEEEEE; -fx-border-width: 0px 0px 2px 0px;" />
-      <TextField fx:id="emailField" alignment="CENTER" layoutX="214.0" layoutY="153.0" prefHeight="27.0" prefWidth="188.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
-      <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="214.0" layoutY="200.0" onAction="#handlePassSignup" prefHeight="27.0" prefWidth="188.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
-      <TextField fx:id="phoneField" alignment="CENTER" layoutX="214.0" layoutY="244.0" prefHeight="27.0" prefWidth="188.0" promptText="Phone" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="usernameField" alignment="CENTER" layoutX="214.0" layoutY="114.0" prefHeight="25.0" prefWidth="188.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: black;" />
+      <TextField fx:id="emailField" alignment="CENTER" layoutX="214.0" layoutY="200.0" prefHeight="27.0" prefWidth="188.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+      <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="214.0" layoutY="159.0" onAction="#handlePassSignup" prefHeight="27.0" prefWidth="188.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
+      <TextField fx:id="nameField" alignment="CENTER" layoutX="214.0" layoutY="244.0" prefHeight="27.0" prefWidth="188.0" promptText="Name" style="-fx-background-color: transparent; -fx-border-color: #FF7F50; -fx-border-width: 0px 0px 2px 0px;" />
       <Separator layoutX="192.0" layoutY="78.0" prefHeight="6.0" prefWidth="215.0" style="-fx-background-color: #000080;" />
    </children>
 </Pane>
